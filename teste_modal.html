@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+
+    <style>
+        /* The Modal (background) */
+        .modal {
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 900;
+            /* Sit on top */
+            /*padding-top: 100px;*/
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            position: relative;
+            margin: auto;
+            margin-top: 50px;
+            padding: 10px;
+            border: 1px solid #888;
+            width: 40%;
+            z-index: 950;
+            width: 500px;
+            height: 500px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 10px;
+                width: 75%;
+            }
+        }
+        
+        .imagem {
+            background-image: url('https://www.orthodonticbrasil.com.br/wp-content/uploads/2020/03/Ação_WhatsApp_Clínicas_Post2.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 500px 500px;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .telefone {
+            text-align: center;
+            padding-top: 410px;
+            font-family: tahoma;
+            color: white;
+            font-size: 25px;
+        }
+
+        /* The Close Button */
+        .close {
+            position: relative;
+            color: #fff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            z-index: 950;
+            margin-top: -7px;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        
+    </style>
+
+</head>
+
+<body>
+    <!-- The Modal -->
+    <div id="myModal" class="modal show">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="imagem">
+                <span id="modal-close" class="close">&times;</span> 
+                <div class="telefone">43 98418-6466</div>
+            </div>
+        </div>
+        <div id="backModal" class="back-modal"></div>
+    </div>
+
+    <script>
+        $('#myModal').show();
+        $('#myModal').parent().css('display', 'block');
+        $('#myModal').parent().css('visibility', 'visible');
+        $('#modal-close').click(function() {
+            $('#myModal').hide();
+        });
+        $('#backModal').click(function() {
+            $('#myModal').hide();
+        });
+
+        var url = window.location.pathname;
+        var filename = url.substring(url.lastIndexOf('/') + 1);
+
+        var myObj, i, j, image = "",
+            telefone = "",
+            link = "";
+        myObj = {
+            "unidades": [{
+                    "unidade": "dentista-londrina-rua-senador-souza-naves",
+                    "telefone": "43 11111-1111",
+                    "link": "#link_londrina",
+                    "imagem": "https://www.orthodonticbrasil.com.br/wp-content/uploads/2020/03/Ação_WhatsApp_Clínicas_Post2.png"
+                },
+                {
+                    "unidade": "dentista-londrina-rua-sergipe",
+                    "telefone": "43 22222-2222",
+                    "link": "#link_londrina2",
+                    "imagem": "imagem2"
+                },
+                {
+                    "unidade": "tryit.asp",
+                    "telefone": "43 33333-3333",
+                    "link": "#link_3",
+                    "imagem": "imagemtryit"
+                }
+            ]
+        }
+
+        for (i in myObj.unidades) {
+            if (filename == myObj.unidades[i].unidade) {
+                image += myObj.unidades[i].imagem;
+                telefone += myObj.unidades[i].telefone;
+                link += myObj.unidades[i].link;
+            }
+
+        }
+        document.getElementById("imagem").innerHTML = '<a href="' + link + '"><img src="' + image + '" style="max-width: 100%"></a>';
+        document.getElementById("telefone").innerHTML = telefone;
+    </script>
+</body>
+
+</html>
