@@ -3,6 +3,16 @@
 Parametro:
 cep
 _________________________________________________________
+Configuração:
+
+Alterar a conexão do banco:
+
+conn = mysqli_connect('localhost', 'root', '', "talkall", 3306); #alterar dados de conexão
+
+Alterar chave do google Maps
+
+key = "AIzaSyDxsmEBS_FzZHq4p5QeGBXMxqHcavkw7n8"; #alterar chave do google
+_________________________________________________________
 Exemplo usando direto no URL:
 
 http://localhost/talkall/calcDistance.php?cep=86703040
