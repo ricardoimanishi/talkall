@@ -11,7 +11,7 @@ conn = mysqli_connect('localhost', 'root', '', "talkall", 3306); #alterar dados 
 
 Alterar chave do google Maps
 
-key = "AIzaSyDxsmEBS_FzZHq4p5QeGBXMxqHcavkw7n8"; #alterar chave do google
+key = "AIzaSyDxsxxxxxxxxxxxxxxqHcavkw7n8"; #alterar chave do google
 _________________________________________________________
 Exemplo usando direto no URL:
 
