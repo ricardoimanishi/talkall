@@ -1,0 +1,10 @@
+1- Realizar loggin no servidor onde será configurado o cron;
+2- Comando para configurar o cron:
+
+crontab -e
+
+Formato para agendar tarefas no cron:
+minuto, hora, dia do mês, mês, dias da semana, usuários, comando
+
+3 - Adicionar ao cron o comando abaixo para rodar todos os dias a meia noite:
+0 0 * wget http://ip_do_servidor/limpaArquivos.php
